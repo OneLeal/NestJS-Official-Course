@@ -8,3 +8,6 @@ Official Course For NewCome.(https://www.theitzy.com/official-nestjs/)
 
 -- nest generate service [name] (create new service)
 -- nest generate service [name] --dry-run (to see simulated output)
+
+-- nest generate module [name] (create new module)
+-- nest generate service [name] --dry-run (to see simulated output)
