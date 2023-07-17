@@ -9,6 +9,8 @@ import {
   Query,
 } from '@nestjs/common';
 import { CoffeesService } from './coffees.service';
+import { CreateCoffeeDto } from './dto/create-coffee.dto';
+import { UpdateCoffeeDto } from './dto/update-coffee.dto';
 
 @Controller('coffees')
 export class CoffeesController {
@@ -27,14 +29,14 @@ export class CoffeesController {
   }
 
   @Post()
-  create(@Body() body: any) {
+  create(@Body() createCoffeeDto: CreateCoffeeDto) {
     // @Body 也能传入一个字符串访问 body 中特定的属性
-    return this.coffeesService.create(body);
+    return this.coffeesService.create(createCoffeeDto);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() body: any) {
-    return this.coffeesService.update(id, body);
+  update(@Param('id') id: string, @Body() updateCoffeeDto: UpdateCoffeeDto) {
+    return this.coffeesService.update(id, updateCoffeeDto);
   }
 
   @Delete(':id')
